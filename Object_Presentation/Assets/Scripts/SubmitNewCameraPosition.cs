@@ -6,7 +6,7 @@ public class SubmitNewCameraPosition : MonoBehaviour
 	public float f_newCameraX, f_newCameraY, f_newCameraZ;
 	private GameObject go_newTarget;
 	private GameObject go_newTargetChild;
-	public LookAtTarget s_lookAtTargetScript;
+	public CameraController s_CameraControllerScript;
 
 	// Use this for initialization
 	void Start ()
@@ -16,13 +16,13 @@ public class SubmitNewCameraPosition : MonoBehaviour
 	}
 
 	//When object is clicked, zoom in on it
-	/*void OnMouseDown()
+	void OnMouseDown()
 	{
 		SetNewTarget ();
-	}*/
+	}
 
 	public void SetNewTarget ()
 	{
-		s_lookAtTargetScript.LookAtNewTarget(go_newTarget, go_newTargetChild, f_newCameraX, f_newCameraY, f_newCameraZ);
+		s_CameraControllerScript.LookAtNewTarget(go_newTarget, go_newTargetChild, f_newCameraX, f_newCameraY, f_newCameraZ);
 	}
 }
